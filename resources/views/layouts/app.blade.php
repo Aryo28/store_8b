@@ -13,10 +13,12 @@
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{('vendor/fontAwesome/css/all.min.css')}}">
+        
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{asset('vendor/fontAwesome/js/menu.js')}}"></script>
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
