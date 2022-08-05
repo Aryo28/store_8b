@@ -9,16 +9,18 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{('vendor/fontAwesome/css/all.min.css')}}">
-        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.css" integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{asset('vendor/fontAwesome/js/menu.js')}}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js"></script>
+
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -44,5 +46,11 @@
         @stack('modals')
 
         @livewireScripts
+
+        @stack('script')
+
+       
+
+
     </body>
 </html>
