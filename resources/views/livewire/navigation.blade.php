@@ -1,4 +1,4 @@
- <header class="bg-gray-700 sticky top-0" x-data="dropDown()"> 
+ <header class="bg-gray-700 sticky top-0 z-50" x-data="dropDown()"> 
      {{-- Care about people's approval and you will be their prisoner. --}}
   
          <div class="container flex items-center h-16 justify-between md:justify-start">
