@@ -1,10 +1,15 @@
 <x-app-layout>
     <div class="container py-8">
-        @foreach($categories as $category)
+        @foreach($categories as $category)  
             <section class="mb-6">
-                <h1 class="text-lg uppercase font-semibold text-gray-700">
-                    {{$category->name}}        
-                </h1>
+                <div class="flex items-center mb-3">
+                    <h1 class="text-lg uppercase font-semibold text-gray-700">
+                        {{$category->name}}        
+                    </h1>
+                    <a href="{{route('categories.show', $category)}}" class="text-orange-500 hover:text-orange-400 hover:underline ml-2 font-semibold">
+                        See more..
+                    </a>
+                </div>
                 @livewire('category-products', ['products' => $products, 'category' => $category])
             </section>
         @endforeach
@@ -35,7 +40,7 @@
                         breakpoint:768,
                         settings:{
                             slidesToShow: 3,
-                            slidesToScroll: 3glide,
+                            slidesToScroll: 3,
                         } 
                     },
                     {

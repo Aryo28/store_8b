@@ -4,7 +4,7 @@
          <div class="container flex items-center h-16 justify-between md:justify-start">
  
                 
-                 <a x-on:click="show()"
+                 <a x-on:click="show"
                  class="flex flex-col items-center justify-center order-last md:order-first px-4 md:px-6 bg-white bg-opacity-25 text-white font-semibold h-full cursor-pointer">
                      <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                          <path class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /> 
@@ -108,13 +108,13 @@
  <nav x-show="open" :class="{'block':open, 'hidden':!open}" 
  class="bg-gray-700 bg-opacity-25 w-full absolute hidden" id="navigation-menu">
  
-     <div x-on:click.away = "close()"
+     <div x-on:click.away = "close"
       class="container h-full hidden md:block">
          <div class="grid grid-cols-4 h-full relative">
              <ul class="bg-white">
                  @foreach ($categories as $category)
                      <li class="navigation-link text-gray-500 hover:bg-orange-500 hover:text-white">
-                         <a href="" class="py-2 px-4 text-sm flex items-center">
+                         <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
                              <span class="flex justify-center w-9">{!!$category->icon!!}</span>
                              {{$category->name}}
                          </a>
