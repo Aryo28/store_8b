@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Builder;
 
 class SizeSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class SizeSeeder extends Seeder
     {
         $products = Product::whereHas('subcategory', function (Builder $query){
             $query->where('color', true)
-            ->where('size', false);
+            ->where('size', true);
         })->get();    
 
         $sizes = ['Size S', 'Size M', 'Size L'];

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,12 @@ use App\Http\Controllers\CategoryController;
 
 Route::get('/', WelcomeController::class);
 
-Route::get('categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+//Category routes
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+
+//Products Routes
+Route::get('/products/{product}',[ProductController::class, 'show'])->name('products.show');
+
 
 Route::middleware([
     'auth:sanctum',

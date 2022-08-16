@@ -29,11 +29,15 @@ class Product extends Model
     }
 
     public function colors(){
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class)->withPivot('quantity');
     }
 
     public function image(){
         return $this->morphMany(Image::class, 'imageable'); 
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
     }
 
 }
